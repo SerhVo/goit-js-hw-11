@@ -140,4 +140,3 @@ function stopImages(photos) {
     btnLoad.style.display = 'none';
   }
 }
-new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
