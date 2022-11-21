@@ -75,7 +75,8 @@ function clearGallery() {
 }
 
 function fetchError(error) {
-  Notiflix.Notify.failure(
+  loadMoreBtn.hide();
+  return Notiflix.Notify.failure(
     'Sorry, there are no images matching your search query. Please try again.'
   );
 }
