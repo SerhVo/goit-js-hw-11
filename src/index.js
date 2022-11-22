@@ -58,7 +58,7 @@ async function fetchGallery() {
     totalPages = images.totalPages;
     renderGallery(images);
     loadMoreBtn.enable();
-    lightbox.refresh();
+    // lightbox.refresh();
     if (imageApiService.page > totalPages) {
       loadMoreBtn.hide();
       return Notiflix.Notify.warning(
