@@ -45,7 +45,7 @@ async function onSearch(e) {
   } catch (error) {
     fetchError();
   }
-  lightbox.refresh();
+  // lightbox.refresh();
   return totalPages;
 }
 
