@@ -45,7 +45,7 @@ async function onSearch(e) {
   } catch (error) {
     fetchError();
   }
-
+  lightbox.refresh();
   return totalPages;
 }
 
@@ -58,7 +58,7 @@ async function fetchGallery() {
     totalPages = images.totalPages;
     renderGallery(images);
     loadMoreBtn.enable();
-
+    lightbox.refresh();
     if (imageApiService.page > totalPages) {
       loadMoreBtn.hide();
       return Notiflix.Notify.warning(
@@ -107,6 +107,10 @@ function renderGallery({ images }) {
     .join('');
 
   refs.gallery.insertAdjacentHTML('beforeend', markUp);
+  const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
 }
 function smoothScroll() {
   const { height: cardHeight } = document
